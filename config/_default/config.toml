@@ -1,6 +1,6 @@
 ####### Base Config #######
-  baseURL = "https://img.youronly.one/"             # .Site.BaseURL
-  title = "Blog Images"                                        # .Site.Title; IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
+  baseURL = "https://images.youronly.one/"             # .Site.BaseURL
+  title = "YourOnly.One: Blog Images"                                        # .Site.Title; IMPT for Schema.org; OpenGraph; Twitter Cards -- for RDFa, Microdata, JSON-LD
   copyright = ""                                            # .Site.Copyright; leave empty and uncommented to override theme default; we are using our own footer
   timeZone = "Etc/UTC"
 
@@ -22,7 +22,7 @@
   enableEmoji = false                                       # format :smile:.
   enableGitInfo = false
   relativeURLs = false                                      # false for our use-case; make all relative URLs relative to content root
-  refLinksNotFoundURL = "https://img.youronly.one/"
+  refLinksNotFoundURL = "https://images.youronly.one/"
 
   ## Dev settings ##
     publishDir = "public"
