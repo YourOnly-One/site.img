@@ -1,0 +1,97 @@
+[hugoVersion]
+  extended = true
+  #max = ""
+  min = "0.103.0"
+
+[[imports]]
+  path = "github.com/bep/gallerydeluxe"
+
+[[imports]]
+  path = "gitlab.com/youronlyone/images"
+  # BGN: /yuki/ images
+    [[imports.mounts]]
+      source = "yuki"
+      target = "content/images"
+  # END: /yuki/ images
+
+  # BGN: /snoworld/ images
+    [[imports.mounts]]
+      source = "snoworld"
+      target = "content/images"
+  # END: /snoworld/ images
+
+  # BGN: /love/ images
+    [[imports.mounts]]
+      source = "love"
+      target = "content/images"
+  # END: /love/ images
+
+  # BGN: /way/ images
+    [[imports.mounts]]
+      source = "way"
+      target = "content/images"
+  # END: /way/ images
+
+  # BGN: /techmagus/ images
+    [[imports.mounts]]
+      source = "techmagus"
+      target = "content/images"
+  # END: /techmagus/ images
+
+
+# See: https://gohugo.io/hugo-modules/configuration/#module-config-mounts
+#   if you add a mounts section you should remove the old staticDir etc. settings.
+#   When you add a mount, the default mount for the concerned target root is ignored: be sure to explicitly add it.
+  [[mounts]]
+    source = "archetypes"
+    target = "archetypes"
+
+  [[mounts]]
+    source = "assets"
+    target = "assets"
+
+  [[mounts]]
+    source = "content/en"
+    target = "content"
+    lang = "en"                                        # when in multihost / multilang mode
+  #[[mounts]]
+  #  source = "content/en-ph"
+  #  target = "content"
+  #  lang = "en-ph"                                      # when in multihost / multilang mode
+  #[[mounts]]
+  #  source = "content/ja"
+  #  target = "content"
+  #  lang = "ja"                                         # when in multihost / multilang mode
+  #[[mounts]]
+  #  source = "content/ko"
+  #  target = "content"
+  #  lang = "ko"                                         # when in multihost / multilang mode
+
+  [[mounts]]
+    source = "data"
+    target = "data"
+
+  [[mounts]]
+    source = "i18n"
+    target = "i18n"
+
+  [[mounts]]
+    source = "layouts"
+    target = "layouts"
+
+  [[mounts]]
+    source = "static/en"
+    target = "static"
+    lang = "en"                                        # when in multihost / multilang mode
+  #[[mounts]]
+  #  source = "static/en-ph"
+  #  target = "static"
+  #  lang = "en-ph"                                      # when in multihost / multilang mode
+  #[[mounts]]
+  #  source = "static/ja"
+  #  target = "static"
+  #  lang = "ja"                                         # when in multihost / multilang mode
+  #[[mounts]]
+  #  source = "static/ko"
+  #  target = "static"
+  #  lang = "ko"                                         # when in multihost / multilang mode
