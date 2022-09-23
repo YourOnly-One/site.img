@@ -4,8 +4,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: hsla(0deg, 0%, 0%, 1);
-  background-color: hwb(0deg 0% 100% / 100%);
+  background-color: hsla(0deg, 0%, 6%, 1);
+  background-color: hwb(0deg 6% 94% / 100%);
 }
 
 .logo {
