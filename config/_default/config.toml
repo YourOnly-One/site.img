@@ -65,16 +65,3 @@
 #######  #######  #######  #######  #######  #######  #######  #######
 
 
-[caches]
-    [caches.images]
-        dir    = ':cacheDir/gallerydeluxe'
-        maxAge = "80h"
-
-[server]
-    [[server.headers]]
-        for = '/**'
-        [server.headers.values]
-            Referrer-Policy = 'strict-origin-when-cross-origin'
-
-[params]
-    [params.gallerydeluxe]
