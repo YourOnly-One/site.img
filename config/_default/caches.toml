@@ -1,0 +1,16 @@
+[assets]
+  dir = ":resourceDir/_gen"
+  maxAge = "1h"
+[getcsv]
+  dir = ":cacheDir/:project"
+  maxAge = "1h"
+[getjson]
+  dir = ":cacheDir/:project"
+  maxAge = "1h"
+[images]
+  #dir = ":resourceDir/_gen"
+  dir = ":cacheDir/gallerydeluxe"
+  maxAge = "80h"
+[modules]
+  dir = ":cacheDir/modules"
+  maxAge = "1h"
