@@ -20,7 +20,7 @@ websubhubs = ["https://pubsubhubbub.appspot.com/", "https://youronlyone.superfee
 ### BGN: Theme settings
   [gallerydeluxe]
     # Shuffle the images in the gallery to give the impression of a new gallery each page load.
-    shuffle = false
+    shuffle = true
 
     # Reverse the order of the images in the gallery.
     reverse = true

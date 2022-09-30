@@ -57,7 +57,7 @@
 
   # .apng should be redeclared as image/png to get Resize working
   # The resized version won't animate.
-  [mediaTypes."image/apng"]
+  [mediaTypes."image/png"]
     suffixes = ["apng", "png"]
 
   # .awebp is only a personal extension since animated .webp is causing errors
@@ -91,10 +91,14 @@
     mediaType = "image/svg+xml"
   [outputFormats.svgz]
     mediaType = "image/svg+xml"
+
+  # .awebp is only a personal extension since animated .webp is causing errors
+  # a temporary workaround
   [outputFormats.png]
-    mediaType = "image/apng"
+    mediaType = "image/png"
   [outputFormats.apng]
-    mediaType = "image/apng"
+    mediaType = "image/png"
+
   [outputFormats.awebp]
     mediaType = "image/webp"
   [outputFormats.webp]
