@@ -48,20 +48,65 @@
 
 
 [mediaTypes]
-  [mediaTypes."image/avif"]
-    suffixes = ["avif"]
+  [mediaTypes."image/jpeg"]
+    suffixes = ["jpeg", "jpg", "jpe", "jif", "jfif", "jfi"]
+  [mediaTypes."image/gif"]
+    suffixes = ["gif"]
+  [mediaTypes."image/svg+xml"]
+    suffixes = ["svgz", "svg"]
 
-  ## .awebp is only a personal extension since animated .webp is causing errors
-  ## a temporary workaround
+  # .apng should be redeclared as image/png to get Resize working
+  # The resized version won't animate.
+  [mediaTypes."image/apng"]
+    suffixes = ["apng", "png"]
+
+  # .awebp is only a personal extension since animated .webp is causing errors
+  # a temporary workaround
   [mediaTypes."image/webp"]
     suffixes = ["webp", "awebp"]
 
-  ## .apng should be redeclared as image/png to get Resize working
-  ## The resized version won't animate.
-  [mediaTypes."image/png"]
-    suffixes = ["png", "apng"]
+  [mediaTypes."image/avif"]
+    suffixes = ["avif", "heif", "heifs", "hif"]
 
 
 #######  #######  #######  #######  #######  #######  #######  #######
 
 
+[outputFormats]
+  [outputFormats.jfi]
+    mediaType = "image/jpeg"
+  [outputFormats.jfif]
+    mediaType = "image/jpeg"
+  [outputFormats.jif]
+    mediaType = "image/jpeg"
+  [outputFormats.jpe]
+    mediaType = "image/jpeg"
+  [outputFormats.jpg]
+    mediaType = "image/jpeg"
+  [outputFormats.jpeg]
+    mediaType = "image/jpeg"
+  [outputFormats.gif]
+    mediaType = "image/gif"
+  [outputFormats.svg]
+    mediaType = "image/svg+xml"
+  [outputFormats.svgz]
+    mediaType = "image/svg+xml"
+  [outputFormats.png]
+    mediaType = "image/apng"
+  [outputFormats.apng]
+    mediaType = "image/apng"
+  [outputFormats.awebp]
+    mediaType = "image/webp"
+  [outputFormats.webp]
+    mediaType = "image/webp"
+  [outputFormats.hif]
+    mediaType = "image/avif"
+  [outputFormats.heifs]
+    mediaType = "image/avif"
+  [outputFormats.heif]
+    mediaType = "image/avif"
+  [outputFormats.avif]
+    mediaType = "image/avif"
+
+
+#######  #######  #######  #######  #######  #######  #######  #######
