@@ -1,7 +1,15 @@
 [hugoVersion]
   extended = true
   #max = ""
-  min = "0.103.0"
+  min = "0.104.0"
+
+[[imports]]
+  disable = false                           # default: false
+  ignoreConfig = false                      # default: false
+  ignoreImports = false                     # default: false
+  noMounts = false                          # default: false
+  noVendor = false                          # default: false
+  path = "gitlab.com/youronlyone/defaults"
 
 [[imports]]
   path = "github.com/bep/gallerydeluxe"
