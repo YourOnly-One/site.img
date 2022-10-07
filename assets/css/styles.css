@@ -6,6 +6,9 @@ body {
   overflow-x: hidden;
   background-color: hsla(0deg, 0%, 6%, 1);
   background-color: hwb(0deg 6% 94% / 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+      Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
 }
 
 .logo {
@@ -13,8 +16,8 @@ body {
   top: 1rem;
   left: 1rem;
   z-index: 2;
-      color: hsla(210deg, 100%, 50%, 1);
-      color: hwb(210deg 0% 0% / 100%);
+  color: hsla(210deg, 100%, 50%, 1);
+  color: hwb(210deg 0% 0% / 100%);
   text-shadow:
     -0.03rem -0.03rem hsla(0deg, 0%, 0%, 0.4),
     0.03rem 0.03rem hsla(0deg, 0%, 0%, 0.4),
