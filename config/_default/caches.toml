@@ -1,16 +1,21 @@
+# See: https://gohugo.io/getting-started/configuration/#configure-file-caches
+
 [assets]
   dir = ":resourceDir/_gen"
-  maxAge = "1h"
+  maxAge = -1
 [getcsv]
   dir = ":cacheDir/:project"
-  maxAge = "1h"
+  maxAge = -1
 [getjson]
   dir = ":cacheDir/:project"
-  maxAge = "1h"
+  maxAge = -1
+[getresource]
+  dir = ':cacheDir/:project'
+  maxAge = -1
 [images]
   #dir = ":resourceDir/_gen"
   dir = ":cacheDir/gallerydeluxe"
   maxAge = "80h"
 [modules]
   dir = ":cacheDir/modules"
-  maxAge = "1h"
+  maxAge = -1
