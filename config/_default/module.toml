@@ -1,7 +1,7 @@
 [hugoVersion]
   extended = true
   #max = ""
-  min = "0.104.0"
+  min = "0.106.0"
 
 [[imports]]
   disable = false                           # default: false
@@ -9,10 +9,7 @@
   ignoreImports = false                     # default: false
   noMounts = false                          # default: false
   noVendor = false                          # default: false
-  path = "gitlab.com/youronlyone/defaults"
-
-[[imports]]
-  path = "github.com/bep/gallerydeluxe"
+  path = "codeberg.org/youronlyone/defaults"
 
 [[imports]]
   path = "gitlab.com/youronlyone/images"
@@ -45,6 +42,9 @@
       source = "techmagus"
       target = "content/images"
   # END: /techmagus/ images
+
+[[imports]]
+  path = "github.com/bep/gallerydeluxe"
 
 
 # See: https://gohugo.io/hugo-modules/configuration/#module-config-mounts
