@@ -27,7 +27,7 @@
   ## Dev settings ##
     publishDir = "public"
     enableMissingTranslationPlaceholders = true
-    timeout = "30s"
+    timeout = "70s"
 
   ## Other settings ##
     disableKinds = ["robotsTXT", "section", "taxonomy", "term"]
