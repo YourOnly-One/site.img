@@ -10,4 +10,4 @@ resampleFilter = "MitchellNetravali"              # default: Box
   disableDate = false                             # default: false
   disableLatLong = false                          # default: false
   excludeFields = ""                              # default: ""; performance and cache size
-  includeFields = ""                              # default: ""; performance and cache size
+  includeFields = "Artist|LensModel|FNumber|ExposureTime"                              # default: ""; performance and cache size
