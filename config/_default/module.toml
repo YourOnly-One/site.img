@@ -6,9 +6,14 @@ workspace = "off"
   ignoreImports = false                     # default: false
   noMounts = false                          # default: false
   noVendor = false                          # default: false
+  path = "codeberg.org/yelosan/hugo-globals"
+
+[[imports]]
   path = "codeberg.org/youronlyone/defaults"
 
 [[imports]]
+  ignoreConfig = true
+  ignoreImports = true
   path = "gitlab.com/youronlyone/images"
   # BGN: /yuki/ images
     [[imports.mounts]]
@@ -41,6 +46,8 @@ workspace = "off"
   # END: /techmagus/ images
 
 [[imports]]
+  ignoreConfig = true
+  ignoreImports = false
   path = "github.com/bep/gallerydeluxe"
 
 
