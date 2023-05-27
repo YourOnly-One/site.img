@@ -1,6 +1,6 @@
 module gitlab.com/youronlyone/site.img
 
-go 1.19
+go 1.20
 
 require (
   gitlab.com/youronlyone/images main
