@@ -1,2 +1,9 @@
 # See: https://gohugo.io/getting-started/configuration/#merge-configuration-from-themes
 _merge = "deep"
+
+[[cacheBusters]]
+  source = 'content/.*\.(png|jpg|jpeg)'
+  target = '(json)'
+[[cacheBusters]]
+  source = 'layouts/.*'
+  target = '(json)'

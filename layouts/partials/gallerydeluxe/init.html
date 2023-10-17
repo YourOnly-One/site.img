@@ -1,13 +1,34 @@
-{{ $sourcePath := .sourcePath | default "images" }}
-{{ $gallery := site.GetPage $sourcePath }}
+{{/* init.hmlt takes either a slice of .images or a .sourcePath that points to a bundle with images.
+  An .id will be calculated if not provided. This will be used to create the URL to the data file.
+*/}}
+
+{{ $images := slice }}
+{{ $galleryIDBase := .id }}
+{{ with .images }}
+  {{ $images = . }}
+  {{ if not $galleryIDBase }}
+    {{ range $images }}
+      {{ $galleryIDBase = printf "%s%s" $galleryIDBase .RelPermalink }}
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ $sourcePath := .sourcePath | default "images" }}
+  {{ if not $galleryIDBase }}
+    {{ $galleryIDBase = $sourcePath }}
+  {{ end }}
+  {{ $gallery := site.GetPage $sourcePath }}
+  {{/* YourOnly.One: changed */}}
+  {{- /* $images = $gallery.Resources.ByType "image" */ -}}
+  {{ $images = $gallery.Resources.Match "**.{webp,apng,png,gif,jpeg,jpg,jpe,jif,jfif,jfi}" }}
+{{ end }}
+{{ $galleryID :=  $galleryIDBase | crypto.FNV32a }}
 {{ $imageDataUrl := "" }}
 {{ $s := slice }}
 {{ $params := site.Params.gallerydeluxe }}
-{{/* YourOnly.One: changed */}}
-{{- /* {{ with $gallery.Resources.ByType "image" }} */ -}}
-{{ with $gallery.Resources.Match "**.{webp,apng,png,gif,jpeg,jpg,jpe,jif,jfif,jfi}" }}
+{{ with $images }}
   {{ range . }}
     {{ $thumbs := partial "gallerydeluxe/create-thumbs.html" . }}
+    {{ $full := $thumbs.full }}
     {{ $20 := (index $thumbs "20") }}
     {{ $colors := slice }}
     {{ $exif := dict }}
@@ -30,10 +51,10 @@
     {{ end }}
     {{ $m :=  dict
       "name" .Name
-      "full" .RelPermalink
+      "full" $full.RelPermalink
       "exif"  $exif
-      "width" .Width
-      "height" .Height
+      "width" $full.Width
+      "height" $full.Height
       "colors" $colors
       "20" $20.RelPermalink
       "100" (index $thumbs "100").RelPermalink
@@ -42,13 +63,13 @@
     }}
     {{ $s = $s | append $m }}
   {{ end }}
-  {{ $r := $s | jsonify | resources.FromString (printf "%s-gallery.json" $sourcePath) }}
+  {{ $r := $s | jsonify | resources.FromString (printf "%d-gallery.json" $galleryID ) }}
   {{ if hugo.IsProduction }}
     {{ $r = $r | minify | fingerprint }}
   {{ end }}
   {{ $imageDataUrl = $r.RelPermalink }}
 {{ else }}
-  {{ errorf "gallerydeluxe: No bundle found in %q. sourcePath must be set to a valid Hugo bundle with JPG images in it." $sourcePath }}
+  {{ errorf "gallerydeluxe: No images provided. Either 'images' as as slice of images or 'sourcePath' must be set to point to a valid Hugo bundle with JPG images in it." }}
 {{ end }}
 
 {{ return (dict
