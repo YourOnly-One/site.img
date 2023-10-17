@@ -7,6 +7,7 @@
       content="width=device-width,
           initial-scale=1.0" />
     <title>{{ .Title }}</title>
+    <link rel="icon" href="favicon.svg" />
     {{ partial "gallerydeluxe/head.html" . }}
     {{ partial "head.html" . }}
   </head>
@@ -15,7 +16,11 @@
   <small class="logo"><br/>See <a href="https://im.youronly.one/yuki/">related articles</a> for Attribution, Copyright, and License notices.</small>
   <small class="logo"><br/><br/>This subsite is a quantum test site (work-in-progress).</small>
 
-  {{/* 'images' is a path to a leaf bundle with a index.md file and lots of JPG images. */}}
+  {{/* init.hmlt takes either a slice of .images or a .sourcePath that points to a bundle with images.
+    An .id will be calculated if not provided. This will be used to create the URL to the data file.
+  */}}
+  {{ $bundle := site.GetPage "images" }}
+  {{ $images := $bundle.Resources.ByType "image" }}
   {{ $gallery := partial "gallerydeluxe/init.html" (dict "sourcePath" "images") }}
   {{ $params := site.Params.gallerydeluxe }}
   {{/* We currently only support 1 gallery per page, which is create4 by an element with id 'gallerydeluxe',
