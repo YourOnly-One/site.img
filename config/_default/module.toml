@@ -15,11 +15,11 @@ workspace = "off"
   ignoreConfig = true
   ignoreImports = true
   path = "gitlab.com/youronlyone/images"
-  # BGN: /yuki/ images
+  # BGN: /love/ images
     [[imports.mounts]]
-      source = "yuki"
+      source = "love"
       target = "content/images"
-  # END: /yuki/ images
+  # END: /love/ images
 
   # BGN: /snoworld/ images
     [[imports.mounts]]
@@ -27,11 +27,11 @@ workspace = "off"
       target = "content/images"
   # END: /snoworld/ images
 
-  # BGN: /love/ images
+  # BGN: /techmagus/ images
     [[imports.mounts]]
-      source = "love"
+      source = "techmagus"
       target = "content/images"
-  # END: /love/ images
+  # END: /techmagus/ images
 
   # BGN: /way/ images
     [[imports.mounts]]
@@ -39,15 +39,14 @@ workspace = "off"
       target = "content/images"
   # END: /way/ images
 
-  # BGN: /techmagus/ images
+  # BGN: /yuki/ images
     [[imports.mounts]]
-      source = "techmagus"
+      source = "yuki"
       target = "content/images"
-  # END: /techmagus/ images
+  # END: /yuki/ images
 
 [[imports]]
   ignoreConfig = true
-  ignoreImports = false
   path = "github.com/bep/gallerydeluxe"
 
 
@@ -63,21 +62,8 @@ workspace = "off"
     target = "assets"
 
   [[mounts]]
-    source = "content/en"
+    source = "content"
     target = "content"
-    lang = "en"                                        # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "content/en-ph"
-  #  target = "content"
-  #  lang = "en-ph"                                      # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "content/ja"
-  #  target = "content"
-  #  lang = "ja"                                         # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "content/ko"
-  #  target = "content"
-  #  lang = "ko"                                         # when in multihost / multilang mode
 
   [[mounts]]
     source = "data"
@@ -92,18 +78,5 @@ workspace = "off"
     target = "layouts"
 
   [[mounts]]
-    source = "static/en"
+    source = "static"
     target = "static"
-    lang = "en"                                        # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "static/en-ph"
-  #  target = "static"
-  #  lang = "en-ph"                                      # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "static/ja"
-  #  target = "static"
-  #  lang = "ja"                                         # when in multihost / multilang mode
-  #[[mounts]]
-  #  source = "static/ko"
-  #  target = "static"
-  #  lang = "ko"                                         # when in multihost / multilang mode
